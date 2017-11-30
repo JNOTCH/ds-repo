@@ -72,3 +72,19 @@ labs(title="relationship b/w engine size & MPG",
       x= 'HWY', y = "Engine Displacement")
       
 ```
+```{r Elliot Hazen examples}
+theme_set(theme_gray()+theme(legend.key=element_blank()))
+theme_set(theme_bw() + theme(legend.key=element_blank()))
+
+g <- ggplot(data=mpg, aes(x=cty, y=displ))
+g + geom_point(aes(size = class, color = hwy > 20), alpha = 0.3)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor=element_blank(),
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_smooth(method="lm",color="black", size=0.5) +
+  geom_smooth(color="blue") +
+  guides(color=guide_legend(override.aes=list(fill=NA)))+
+  labs(title="Relationship b/w displacement and city MPG",
+       x="Highway MPG",
+       y= "Engine Displacement (liters)")+
+      theme(text=element_text(size=12))
+```

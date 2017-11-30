@@ -41,3 +41,15 @@ library(tidyverse)
 g <- ggplot(data=mpg, aes(x=displ, y=hwy))
 g + geom_point()
 ```
+
+```{r color}
+library(tidyverse)
+g <- ggplot(data=mpg, aes(x=displ, y=hwy))
+g + geom_point(aes(color = class))
+```
+
+```{r shape}
+library(tidyverse)
+g <- ggplot(data=mpg, aes(x=displ, y=hwy))
+g + geom_point(aes(shape = class))
+```

@@ -88,3 +88,55 @@ panel.background = element_blank(), axis.line = element_line(colour = "black"))+
        y= "Engine Displacement (liters)")+
       theme(text=element_text(size=12))
 ```
+
+## Data Wrangling with "dplyr"
+
+```{r dplyr}
+
+library(tidyverse)
+
+gapminder <- read_csv("https://raw.githubusercontent.com/OHI-Science/data-science-training/master/data/gapminder.csv")
+
+##column names
+names(gapminder)
+
+#dimensions of the data
+dim(gapminder)
+ncol(gapminder)
+nrow(gapminder)
+
+#combine with c()
+c(nrow(gapminder),ncol(gapminder))
+
+#summary statistics
+summary(gapminder)
+
+head(gapminder$lifeExp)
+
+
+```
+
+### Working with dplyr
+```{r dplyr practice}
+
+filter(gapminder,lifeExp < 29)
+
+filter(gapminder, country == "Mexico")
+
+mean(gapminder$lifeExp[gapminder$country=="Sweden"])
+mean(filter(gapminder, country == "Sweden")$lifeExp)
+
+sweden <- filter(gapminder, country=="Sweden")
+mean(sweden$lifeExp)
+
+## pipe operator " %>% "
+
+gapminder %>% head(3)
+
+#lets use the %>%  with the Sweden example
+gapminder %>%  
+  filter(country=="Sweden") %>% 
+  summarize(mean_lifeExp = mean(lifeExp))
+
+```
+

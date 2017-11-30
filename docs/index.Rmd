@@ -3,10 +3,10 @@ title: "index"
 author: "Jeremy Notch"
 date: "November 30, 2017"
 output: 
-html_document:
-  code_folding: hide
-  toc: true
-  toc_float: true
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_float: true
   
 ---
 
@@ -34,6 +34,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
+## scatterplot
 ```{r scatterplot}
 
 library(tidyverse)

@@ -199,6 +199,14 @@ gapminder %>%
   
 
 ```
+### Day 2 Training
 
+```{r Tidyverse take 2}
+#dplyr - mutating joins
+# left_join, right_join, inner_join, full_join
+
+co2 <- read_csv("https://raw.githubusercontent.com/OHI-Science/data-science-training/master/data/co2.csv")
+
+```
 
 
